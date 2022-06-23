@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: document-scanner-android
+  description: |
+    Scan documents with Android devices using OpenCV.
+  tags:
+    - ui
+  annotations:
+    github.com/project-slug: sda-se/document-scanner-android
+    sda.se/summary:
+      $text: ./README.md
+spec:
+  type: library
+  owner: team-communications
+  lifecycle: experimental
+  system: submission
