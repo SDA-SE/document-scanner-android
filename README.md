@@ -30,7 +30,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.websitebeaver.documentscanner.DocumentScanner
+import org.sdase.submission.documentscanner.DocumentScanner
 
 class MainActivity : AppCompatActivity() {
     private lateinit var croppedImageView: ImageView
@@ -92,8 +92,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.websitebeaver.documentscanner.DocumentScanner
-import com.websitebeaver.documentscanner.constants.ResponseType
+import org.sdase.submission.documentscanner.DocumentScanner
+import org.sdase.submission.documentscanner.constants.ResponseType
 
 class MainActivity : AppCompatActivity() {
     private lateinit var croppedImageView: ImageView
@@ -149,8 +149,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.websitebeaver.documentscanner.DocumentScanner
-import com.websitebeaver.documentscanner.constants.ResponseType
+import org.sdase.submission.documentscanner.DocumentScanner
+import org.sdase.submission.documentscanner.constants.ResponseType
 
 class MainActivity : AppCompatActivity() {
     private lateinit var croppedImageView: ImageView
@@ -202,8 +202,10 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
-import com.websitebeaver.documentscanner.DocumentScanner;
+
+import org.sdase.submission.documentscanner.DocumentScanner;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -211,26 +213,26 @@ public class MainActivity extends AppCompatActivity {
 
     DocumentScanner documentScanner = new DocumentScanner(
             this,
-        (croppedImageResults) -> {
-            // display the first cropped image
-            croppedImageView.setImageBitmap(
-                BitmapFactory.decodeFile(croppedImageResults.get(0))
-            );
-            return null;
-        },
-        (errorMessage) -> {
-            // an error happened
-            Log.v("documentscannerlogs", errorMessage);
-            return null;
-        },
-        () -> {
-            // user canceled document scan
-            Log.v("documentscannerlogs", "User canceled document scan");
-            return null;
-        },
-        null,
-        null,
-        null
+            (croppedImageResults) -> {
+                // display the first cropped image
+                croppedImageView.setImageBitmap(
+                        BitmapFactory.decodeFile(croppedImageResults.get(0))
+                );
+                return null;
+            },
+            (errorMessage) -> {
+                // an error happened
+                Log.v("documentscannerlogs", errorMessage);
+                return null;
+            },
+            () -> {
+                // user canceled document scan
+                Log.v("documentscannerlogs", "User canceled document scan");
+                return null;
+            },
+            null,
+            null,
+            null
     );
 
     @Override
